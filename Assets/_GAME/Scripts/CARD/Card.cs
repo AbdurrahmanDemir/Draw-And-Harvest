@@ -35,7 +35,6 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         transform.DOScale(originalScale * 1.1f, 0.2f); 
     }
 
-    // Fare karttan ayrýldýðýnda
     public void OnPointerExit(PointerEventData eventData)
     {
         transform.DOScale(originalScale, 0.2f);

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using DG.Tweening;
-using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -32,7 +31,9 @@ public class TutorialManager : MonoBehaviour
     public void TutorailPanel2()
     {
         ClosePanel(tutorialPanel1);
-        OpenPanel(tutorialPanel2);
+        PlayerPrefs.SetInt("Tutorial", 1);
+
+        //OpenPanel(tutorialPanel2);
     }
 
     public void TutorailPanel3()

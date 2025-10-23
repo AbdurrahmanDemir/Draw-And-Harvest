@@ -1,0 +1,34 @@
+{
+	"poki_template_version": 1,
+	"extra_html": {
+	  "head": [
+		"<!-- will be copied to the resulting head //-->"
+	  ],
+	  "body": [
+		"<!-- will be copied to the resulting body //-->",
+		"<!-- will also be copied to the resulting body //-->"
+	  ]
+	},
+	"background_color": "#231F20",
+	"background_filename": "",
+	"code_filename": "0043aa827246241ca034755c47377e3c.wasm",
+	"company_name": "DefaultCompany",
+	"data_filename": "abd5c3ceb4ae60f511ef54f08ef280a5.data",
+	"decompression_fallback": "Disabled",
+	"development_player": "false",
+	"framework_filename": "0325521ee4324aa642c3b1f1804be82d.framework.js",
+	"height": "400",
+	"loader_filename": "a0eb54968f12b724932ff61ec1f2137c.loader.js",
+	"memory_filename": "",
+	"product_name": "DrawAndCollect",
+	"product_version": "1.0",
+	"splash_screen_style": "Dark",
+	"symbols_filename": "",
+	"unity_version": "2022.3.40f1",
+	"use_data_caching": "true",
+	"use_threads": "false",
+	"use_wasm": "true",
+	"use_webgl_1_0": "false",
+	"use_webgl_2_0": "true",
+	"width": "700"
+  }

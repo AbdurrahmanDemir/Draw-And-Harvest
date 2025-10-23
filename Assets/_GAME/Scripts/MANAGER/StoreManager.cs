@@ -1,11 +1,8 @@
 //using CrazyGames;
-using Playgama.Modules.Platform;
-using Playgama;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using Playgama.Modules.Advertisement;
 
 public class StoreManager : MonoBehaviour
 {
@@ -22,16 +19,9 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI energyCountText;
     [SerializeField] private TextMeshProUGUI goldText;
     private string currentAdContext;
-    private void Awake()
-    {
-        Bridge.platform.SendMessage(PlatformMessage.GameReady);
-        Bridge.storage.Set("level", "dungeon_123");
 
-
-    }
     private void Start()
     {
-        Bridge.advertisement.rewardedStateChanged += OnRewardedStateChanged;
 
         if (!PlayerPrefs.HasKey("startedpack1"))
             startedPack1.SetActive(true);
@@ -41,68 +31,62 @@ public class StoreManager : MonoBehaviour
         }
 
     }
-    public void ShowAdForPack(string packContext)
-    {
-        currentAdContext = packContext; // Baðlamý belirle
+  
+    //private void OnRewardedStateChanged(RewardedState state)
+    //{
+    //    if (state == RewardedState.Rewarded)
+    //    {
+    //        Debug.Log("Rewarded Ad Success for context: " + currentAdContext);
+    //        // Reklam baðlamýna göre ilgili metodu çalýþtýr
+    //        switch (currentAdContext)
+    //        {
 
-        Bridge.advertisement.ShowRewarded();
+    //            case "startedpack1":
+    //                StartedPack1();
+    //                break;
+    //            case "startedpack2":
+    //                StartedPack2();
+    //                break;
+    //            case "energypack":
+    //                EnergyPack();
+    //                break;
+    //            case "bigenergypack":
+    //                BigEnergyPack();
+    //                break;
+    //            case "goldpack":
+    //                GoldPack();
+    //                break;
+    //            case "biggoldpack":
+    //                BigGoldPack();
+    //                break;
+    //            case "gamemidpack":
+    //                GameMidAdPack();
+    //                break;
+    //            case "battlemidpack":
+    //                BattleMidAdPack();
+    //                break;
+    //            case "menugiftpack":
+    //                MenuGiftPack();
+    //                break;
 
-    }
-    private void OnRewardedStateChanged(RewardedState state)
-    {
-        if (state == RewardedState.Rewarded)
-        {
-            Debug.Log("Rewarded Ad Success for context: " + currentAdContext);
-            // Reklam baðlamýna göre ilgili metodu çalýþtýr
-            switch (currentAdContext)
-            {
+    //            default:
+    //                Debug.LogWarning("Unknown context: " + currentAdContext);
+    //                break;
+    //        }
+    //    }
+    //    else if (state == RewardedState.Failed)
+    //    {
+    //        Debug.Log("Rewarded Ad Failed for context: " + currentAdContext);
+    //        // Baþarýsýz olursa hiçbir þey yapma
+    //    }
 
-                case "startedpack1":
-                    StartedPack1();
-                    break;
-                case "startedpack2":
-                    StartedPack2();
-                    break;
-                case "energypack":
-                    EnergyPack();
-                    break;
-                case "bigenergypack":
-                    BigEnergyPack();
-                    break;
-                case "goldpack":
-                    GoldPack();
-                    break;
-                case "biggoldpack":
-                    BigGoldPack();
-                    break;
-                case "gamemidpack":
-                    GameMidAdPack();
-                    break;
-                case "battlemidpack":
-                    BattleMidAdPack();
-                    break;
-                case "menugiftpack":
-                    MenuGiftPack();
-                    break;
-
-                default:
-                    Debug.LogWarning("Unknown context: " + currentAdContext);
-                    break;
-            }
-        }
-        else if (state == RewardedState.Failed)
-        {
-            Debug.Log("Rewarded Ad Failed for context: " + currentAdContext);
-            // Baþarýsýz olursa hiçbir þey yapma
-        }
-
-        // Baðlamý sýfýrla
-        currentAdContext = null;
-    }
-    public void NameAds(string name)
-    {
-        ShowAdForPack(name);
-    }
+    //    // Baðlamý sýfýrla
+    //    currentAdContext = null;
+    //}
+    //public void NameAds(string name)
+    //{
+    //    ShowAdForPack(name);
+    //}
     public void StartedPack1()
     {
         startedPack1Count++;

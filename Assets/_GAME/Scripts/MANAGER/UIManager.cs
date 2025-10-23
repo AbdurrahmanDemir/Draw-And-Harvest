@@ -1,6 +1,5 @@
 using DG.Tweening;
 using LayerLab;
-using Playgama;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -143,8 +142,9 @@ public class UIManager : MonoBehaviour
     }
     public void FinishButton()
     {
-        Bridge.advertisement.ShowInterstitial();
         SceneManager.LoadScene(0);
+        PokiUnitySDK.Instance.gameplayStop();
+
     }
     public void OpenCardsPanel()
     {

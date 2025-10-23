@@ -1,6 +1,5 @@
 //using CrazyGames;
 using DG.Tweening;
-using Playgama;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,7 +50,8 @@ public class GameManager : MonoBehaviour
             StartLevel(LevelManager.instance.LoadLevel());
             MoveUpdate(0);
             PlayerTakeDamage(0);
-            Bridge.advertisement.ShowInterstitial();
+            PokiUnitySDK.Instance.gameplayStart();
+
         }
         else
         {
